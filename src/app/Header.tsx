@@ -9,8 +9,8 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ onToggleAdminMode, isAdminMode }) => {
   const router = useRouter();
 
-  const navigateToPage2 = () => {
-    router.push("/page2");
+  const navigateToPage = (link: string) => {
+    router.push(link);
   };
 
   return (
@@ -22,10 +22,12 @@ const Header: React.FC<HeaderProps> = ({ onToggleAdminMode, isAdminMode }) => {
         <Link href="/about">
           <p>About</p>
         </Link>
-        <button className="button" onClick={navigateToPage2}>
+        <button className="button" onClick={() => navigateToPage("/page2")}>
           Page 2
         </button>
-        <p>Page 3</p>
+        <button className="button" onClick={() => navigateToPage("/page3")}>
+          Page 3
+        </button>
       </div>
       <button onClick={onToggleAdminMode}>
         {isAdminMode ? "Disable Admin Mode" : "Enable Admin Mode"}
