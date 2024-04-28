@@ -19,6 +19,9 @@ const Header: React.FC<HeaderProps> = ({ onToggleAdminMode, isAdminMode }) => {
         <h1>Router Expense App</h1>
       </Link>
       <div className="links">
+        <Link href="/">
+          <p>Home</p>
+        </Link>
         <Link href="/about">
           <p>About</p>
         </Link>
